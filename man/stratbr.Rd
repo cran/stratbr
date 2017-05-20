@@ -4,15 +4,19 @@
 \alias{stratbr}
 \title{Optimization Algorithm to solve stratification problem}
 \usage{
-stratbr(X, stratas = 3, nsample = 30, tampop = 100, totgen = 1500,
-  pelite = 0.2, pmutant = 0.3, rc = 0.6, minimumsample = 2, cores = 2)
+stratbr(X, H = 3, n = 30, nmin = 2, takeall = FALSE, tampop = 100,
+  totgen = 1500, pelite = 0.2, pmutant = 0.3, rc = 0.6, cores = 2)
 }
 \arguments{
 \item{X}{Stratification variable.}
 
-\item{stratas}{Number of strata.}
+\item{H}{Number of strata.}
 
-\item{nsample}{Sample size.}
+\item{n}{Sample size.}
+
+\item{nmin}{Minimum sample size (smallest possible sample size in any stratum).}
+
+\item{takeall}{Take-all stratum (takeall=TRUE) =>  nH=NH.}
 
 \item{tampop}{Number of chromosomes BRKGA.}
 
@@ -23,8 +27,6 @@ stratbr(X, stratas = 3, nsample = 30, tampop = 100, totgen = 1500,
 \item{pmutant}{Percentage mutant solutions BRKGA.}
 
 \item{rc}{Crossover probability  BRKGA.}
-
-\item{minimumsample}{Minimum sample size (smallest possible sample size in any stratum).}
 
 \item{cores}{Numerical amount of CPUs requested for the cluster.}
 }
@@ -44,7 +46,7 @@ stratbr(X, stratas = 3, nsample = 30, tampop = 100, totgen = 1500,
 \description{
 This function aims at constructing optimal strata with an optimization algorithm
 based on a global optimisation technique called Biased Random Key Genetic Algorithms(BRKGA).
-The optimization algorithm is applied to solve the onedimensional case,
+The optimization algorithm is applied to solve the one dimensional case,
 which reduces the stratification problem to just determining strata boundaries.
 Assuming that the number H of strata and the total sample size n are fixed,
 it is possible to produce the strata boundaries by taking into consideration
@@ -55,13 +57,9 @@ stratum are more homogeneous among themselves.
 \examples{
 data(Sweden)
 REV84<-Sweden[,9]
-solution1<-stratbr(REV84,stratas=3,nsample=100,cores=4,totgen=20)
-#'solution2<-stratbr(REV84,stratas=3,nsample=100,cores=4,totgen=20,minimumsample=30)
-ME84<-Sweden[,8]
-solution3<-stratbr(ME84,stratas=4,nsample=75,cores=2,totgen=20)
-}
-\author{
-Jose Brito (jambrito@gmail.com), Pedro Luis and Tomas Veiga.
+solution1<-stratbr(REV84,H=3,n=50,nmin=10,totgen=2,cores=4)
+data(USbanks)
+solution2<-stratbr(USbanks,H=3,n=50,totgen=2,cores=4,takeall=TRUE)
 }
 \references{
 Brito, J.A.M, Silva, P.L.N.,Semaan, G.S. and Maculan, N. (2015).
@@ -76,4 +74,6 @@ Brito, J.A.M, Silva, P.L.N.,Semaan, G.S. and Maculan, N. (2015).
            Biased random-key genetic algorithms for combinatorial optimization,
            Journal of Heuristics, 17: 487-525.
 }
-
+\author{
+Jose Brito (jambrito@gmail.com), Pedro Luis and Tomas Veiga.
+}
