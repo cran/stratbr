@@ -18,15 +18,15 @@ stratbr(X, H = 3, n = 30, nmin = 2, takeall = FALSE, tampop = 100,
 
 \item{takeall}{Take-all stratum (takeall=TRUE) =>  nH=NH.}
 
-\item{tampop}{Number of chromosomes BRKGA.}
+\item{tampop}{Number of chromosomes BRKGA.The default is 100.}
 
-\item{totgen}{Number of generations BRKGA.}
+\item{totgen}{Maximum number of generations BRKGA.The default is 1500.}
 
-\item{pelite}{Percentage elite solutions BRKGA.}
+\item{pelite}{Percentage elite solutions BRKGA.The default is 0.2.}
 
-\item{pmutant}{Percentage mutant solutions BRKGA.}
+\item{pmutant}{Percentage mutant solutions BRKGA.The default is 0.3.}
 
-\item{rc}{Crossover probability  BRKGA.}
+\item{rc}{Crossover probability  BRKGA. The default is 0.6.}
 
 \item{cores}{Numerical amount of CPUs requested for the cluster.}
 }
@@ -61,6 +61,9 @@ solution1<-stratbr(REV84,H=3,n=50,nmin=10,totgen=2,cores=4)
 data(USbanks)
 solution2<-stratbr(USbanks,H=3,n=50,totgen=2,cores=4,takeall=TRUE)
 }
+\author{
+Jose Brito (jambrito@gmail.com), Pedro Luis and Tomas Veiga.
+}
 \references{
 Brito, J.A.M, Silva, P.L.N.,Semaan, G.S. and Maculan, N. (2015).
            Integer Programming Formulations Applied to Optimal Allocation in Stratified Sampling.
@@ -74,6 +77,4 @@ Brito, J.A.M, Silva, P.L.N.,Semaan, G.S. and Maculan, N. (2015).
            Biased random-key genetic algorithms for combinatorial optimization,
            Journal of Heuristics, 17: 487-525.
 }
-\author{
-Jose Brito (jambrito@gmail.com), Pedro Luis and Tomas Veiga.
-}
+

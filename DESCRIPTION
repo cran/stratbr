@@ -1,7 +1,7 @@
 Package: stratbr
 Type: Package
 Title: Optimal Stratification in Stratified Sampling
-Version: 1.1
+Version: 1.2
 Date: 2017-05-19
 Author: Jose Brito, Pedro Silva and Tomas Veiga
 Maintainer: Jose Brito <jambrito@gmail.com>
@@ -14,8 +14,8 @@ Depends: Rglpk,snowfall,stratification
 Encoding: UTF-8
 License: GPL-2
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
+Packaged: 2017-05-26 21:35:40 UTC; britom
 NeedsCompilation: no
-Packaged: 2017-05-20 02:14:52 UTC; AMANDOCA_AMD
 Repository: CRAN
-Date/Publication: 2017-05-20 02:19:31 UTC
+Date/Publication: 2017-05-26 21:44:59 UTC

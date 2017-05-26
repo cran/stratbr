@@ -5,11 +5,11 @@
 #'@param n             Sample size.
 #'@param nmin          Minimum sample size (smallest possible sample size in any stratum).
 #'@param takeall       Take-all stratum (takeall=TRUE) =>  nH=NH.
-#'@param tampop        Number of chromosomes BRKGA.
-#'@param totgen        Number of generations BRKGA.
-#'@param pelite        Percentage elite solutions BRKGA.
-#'@param pmutant       Percentage mutant solutions BRKGA.
-#'@param rc            Crossover probability  BRKGA.
+#'@param tampop        Number of chromosomes BRKGA.The default is 100.
+#'@param totgen        Maximum number of generations BRKGA.The default is 1500.
+#'@param pelite        Percentage elite solutions BRKGA.The default is 0.2.
+#'@param pmutant       Percentage mutant solutions BRKGA.The default is 0.3.
+#'@param rc            Crossover probability  BRKGA. The default is 0.6.
 #'@param cores         Numerical amount of CPUs requested for the cluster.
 #'@return \item{cvtot}{Coefficient of variation for the estimator of total of the stratification variable considered.}
 #'@return \item{nh}{Number of sample elements, or sample size, in stratum h.}
@@ -190,7 +190,7 @@ pop_gen<-function(psize,L,faixa)
 #'@param Sh2x          Vector with population variance of the variable X in stratum h.
 #'@param n             Sample size.
 #'@param H             Number of strata.
-#'@param nmin          Minimum sample size (smallest possible sample size in any stratum).
+#'@param nmin          Minimum sample size (smallest possible sample size in any stratum). The default is 2.
 #'@param X             Population Total
 #'@param takeall       Take-all stratum (takeall=TRUE) =>  nH=NH.
 #'@return \item{solution}{Vector with  sample of size by stratum and coefficient of variation
@@ -215,7 +215,7 @@ pop_gen<-function(psize,L,faixa)
 #'Sh2x<-c(4436978,5581445,33454902,5763294,8689167,3716130,13938505)
 #'aloc2<-BSSM_FD(Nh,Sh2x,n=100,H=7,nmin=2,X)
 
-BSSM_FD<-function(Nh,Sh2x,n,H,nmin,X,takeall=FALSE)
+BSSM_FD<-function(Nh,Sh2x,n,H,nmin=2,X,takeall=FALSE)
 {
   Nh=Nh
   Vh=Sh2x

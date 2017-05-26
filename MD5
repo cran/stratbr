@@ -1,6 +1,6 @@
-22c9934a8d4bfea8c9bdc19fe67adae8 *DESCRIPTION
+cda5adf1b401371e56bfe4d9ba579c42 *DESCRIPTION
 a826420e273041c0861081b39b861774 *NAMESPACE
 58129de6c77e06ab03493ed6f44894c1 *R/hello.R
-02f4a9b4a17fd65573faef2c3be3a97f *R/stratbr.R
-c16140c61d0940bcad34a3e0c8f91b1e *man/BSSM_FD.Rd
-2b885731b4b69eea3dd4edec4dddac53 *man/stratbr.Rd
+91c32ceeddb8db012bd2538bc9024728 *R/stratbr.R
+bd17e4b2feed1f8b10937b1b5faf6e18 *man/BSSM_FD.Rd
+0c89f050742f52a4dbea348f64f5fbc8 *man/stratbr.Rd

@@ -4,7 +4,7 @@
 \alias{BSSM_FD}
 \title{Optimal Allocation - Minimum Coefficient of Variation}
 \usage{
-BSSM_FD(Nh, Sh2x, n, H, nmin, X, takeall = FALSE)
+BSSM_FD(Nh, Sh2x, n, H, nmin = 2, X, takeall = FALSE)
 }
 \arguments{
 \item{Nh}{Vector with number of population elements, or population size, in stratum h}
@@ -15,7 +15,7 @@ BSSM_FD(Nh, Sh2x, n, H, nmin, X, takeall = FALSE)
 
 \item{H}{Number of strata.}
 
-\item{nmin}{Minimum sample size (smallest possible sample size in any stratum).}
+\item{nmin}{Minimum sample size (smallest possible sample size in any stratum). The default is 2.}
 
 \item{X}{Population Total}
 
@@ -40,11 +40,12 @@ X<-542350
 Sh2x<-c(4436978,5581445,33454902,5763294,8689167,3716130,13938505)
 aloc2<-BSSM_FD(Nh,Sh2x,n=100,H=7,nmin=2,X)
 }
+\author{
+Jose Brito (jambrito@gmail.com), Pedro Silva, Gustavo Semaan and Nelson Maculan.
+}
 \references{
 Brito, J.A.M, Silva, P.L.N.,Semaan, G.S. and Maculan, N. (2015).
            Integer Programming Formulations Applied to Optimal Allocation in Stratified Sampling.
            Survey Methodology, 41: 427-442.
 }
-\author{
-Jose Brito (jambrito@gmail.com), Pedro Silva, Gustavo Semaan and Nelson Maculan.
-}
+
